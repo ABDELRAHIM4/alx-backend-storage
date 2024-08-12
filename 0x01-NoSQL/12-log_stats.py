@@ -9,10 +9,10 @@ def log_st():
     Collection = client.logs.nginx
     docum = Collection.count_documents({})
     print(f"{docum} logs")
-    print("Methods")
+    print("Methods:")
     for meth in ["GET", "POST", "PUT", "PATCH", "DELETE"]:
         num = Collection.count_documents({"method": meth})
-        print(f"{meth}: {num}")
+        print(f"    method {meth}: {num}")
     add = Collection.count_documents({ "method" : "GET", "path": "/status"})
     print(f"{add} status check")
 
