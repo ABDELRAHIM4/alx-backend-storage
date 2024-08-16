@@ -69,7 +69,7 @@ class Cache():
         methods = method.__qualname__
         intput = f"{methods}: inputs"
         output = f"{methods}:outputs"
-        
+
         intp = r.lrange(intput, 0, -1)
         outp = r.lrange(output, 0, -1)
         print(f"{methods} was called {intp} times:")
