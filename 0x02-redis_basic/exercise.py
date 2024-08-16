@@ -32,7 +32,7 @@ class Cache():
             self._redis.incr(key)
             return method(self, *args, **kwargs)
         return (wrapper)
-    def call_history(method:Callable[..., Any]) -> Callable[..., Any]:
+    def call_history(method:Callable) -> Callable:
         """call_history decorator to store the history of inputs"""
         @wraps(method)
         def wrapper(self, *args, **kwargs):
